@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+h1{
+font-size:3em;
+margin-bottom:10px;
+}
+
+h2{
+font-size:2em;
+}
+
+p{
+max-width:700px;
+line-height:1.8;
+font-size:20px;
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+margin-top:25px;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+width:90%;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+#cake{
+font-size:150px;
+transition:1s;
+}
+
+.hidden{
+display:none;
+}
+
+.fade{
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+
+<h1>🎂 Happy Birthday ❤️</h1>
+
+<h2>My Love</h2>
+
+<p>
+I made something special just for you.
+Today is all about celebrating the most beautiful person in my world.
+</p>
+
+<button onclick="next()">Start Surprise ❤️</button>
+
+</section>
+
+<section class="hidden">
+
+<h2>💌 A Letter From My Heart</h2>
+
+<p>
+
+Happy Birthday ❤️
+
+You deserve all the happiness this world can offer.
+
+Thank you for being such an amazing person.
+
+Your smile brightens every room.
+
+Your kindness inspires everyone around you.
+
+I hope every dream you make today becomes reality.
+
+May this year bring endless happiness, success and beautiful memories.
+
+</p>
+
+<button onclick="next()">Continue 📸</button>
+
+</section>
+
+<section class="hidden">
+
+<h2>Beautiful Memories ❤️</h2>
+
+<div class="gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+
+</div>
+
+<p>Every picture reminds me how wonderful you are.</p>
+
+<button onclick="next()">Make A Wish ✨</button>
+
+</section>
+
+<section class="hidden">
+
+<h2>✨ Close Your Eyes</h2>
+
+<p>
+
+Think about your biggest dream...
+
+Now make your birthday wish.
+
+</p>
+
+<button onclick="wish()">🌟 Make My Wish</button>
+
+</section>
+
+<section class="hidden" id="candlePage">
+
+<h2>🕯️ Blow Out The Candle</h2>
+
+<div id="cake">🎂🕯️</div>
+
+<button onclick="blow()">Blow Candle</button>
+
+</section>
+
+<section class="hidden" id="cakePage">
+
+<h2>🍰 Time To Cut The Cake</h2>
+
+<div id="cake2" style="font-size:150px;">🎂</div>
+
+<button onclick="cutCake()">Cut Cake 🎉</button>
+
+</section>
+
+<section class="hidden">
+
+<h1>🎉 Happy Birthday ❤️</h1>
+
+<p>
+
+I wish your smile never fades.
+
+I wish every dream comes true.
+
+I wish happiness always finds you.
+
+Thank you for being such an incredible part of my life.
+
+You deserve all the love, joy and success in the world.
+
+May this birthday be as beautiful as your heart.
+
+❤️
+
+</p>
+
+<h2>Forever Wishing You Happiness ❤️</h2>
+
+</section>
+
+<script>
+
+let page=0;
+
+const sections=document.querySelectorAll("section");
+
+function next(){
+
+sections[page].classList.add("hidden");
+
+page++;
+
+sections[page].classList.remove("hidden");
+
+sections[page].classList.add("fade");
+
+}
+
+function wish(){
+
+alert("✨ May all your birthday wishes come true ❤️");
+
+next();
+
+}
+
+function blow(){
+
+document.getElementById("cake").innerHTML="🎂";
+
+alert("🎉 Candle Blown! Happy Birthday ❤️");
+
+next();
+
+}
+
+function cutCake(){
+
+document.getElementById("cake2").innerHTML="🍰";
+
+alert("🎊 Cake Cut Successfully! ❤️");
+
+next();
+
+}
+
+</script>
+
+</body>
+</html>
